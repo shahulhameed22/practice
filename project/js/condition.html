@@ -1,0 +1,25 @@
+<html>
+    <head>
+        <title>result</title>
+    </head>
+    <body>
+        <input type="text" id="e1"/>
+        <input type="button" value="click" onclick="check()" id="r1"/>
+        <script>
+            function check(){
+
+                b=document.getElementById("e1").value;
+                if(b === '' || b === null ){
+                    alert("plz enter value");
+                }
+                else if(b>35){
+                    document.write("you are pass");
+                }
+                else{
+                    document.write("you are fail")
+                }
+            }
+        </script>
+        
+    </body>
+</html>

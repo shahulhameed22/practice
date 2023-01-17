@@ -1,0 +1,60 @@
+<html>
+    <head>
+        <title>javascript</title>
+    </head>
+    <body>
+        <input type="text" id="itemes"/>
+        <input type="button" value="add" id="text-btn" onclick="add()"/>
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>sno</th>
+                    <th>Name</th>
+                    <th>action</th>
+                </tr>
+            </thead>
+            <tbody id="lists"></tbody>
+        </table>
+
+        <script>
+            var names=[];
+            function add(){
+                var items=document.getElementById('itemes').value;
+                var item_len=names.length;
+                if(item_len>10){
+                    alter("overflow of array");
+                }
+                else{
+                    if(items===''||items===null){
+                        alert("enter value");
+                    }
+                
+                else{
+                    names.push(items);
+                    getitems();
+                }
+            }
+            }
+            function getitems(){
+                var a='';
+                var b=0;
+                names.forEach(function(value,index){
+                    // console.log(value)
+                    b=b+1;
+                    a+='<tr><td>'+b+'</td><td>'+value+'</td><td><a onclick="del('+index+')">delete</a></td></tr>';
+
+
+                });
+                document.getElementById("lists").innerHTML=a;
+
+            }
+            function del(id){
+                names.splice(id,1);
+                getitems();
+            }
+
+
+
+        </script>
+    </body>
+</html>
